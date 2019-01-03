@@ -3875,8 +3875,16 @@ int32_t InitDram(void)
 	_cnf_BOARDTYPE = boardcnf_get_brd_type();
 	if(_cnf_BOARDTYPE>=BOARDNUM){
 		FATAL_MSG("BL2: DDR:Unknown Board\n");
-		return 0xff;
+		/* return 0xff; */
 	}
+
+    /*
+     * Ref :
+     * boardcnf[10] RENESAS Kriek(2rank) board with M3-N/SoC
+     * Real DDR use "K4F6E3S4HM_16Gb K4F6E3S4HM_16Gb"
+     * use 1 CS, 1 Rank, 2 cell, 8Gb/cell
+     */
+    _cnf_BOARDTYPE = 10;
 	Boardcnf = (struct _boardcnf *)&boardcnfs[_cnf_BOARDTYPE];
 
 //RCAR_DRAM_SPLIT_2CH		(2U)

@@ -920,7 +920,7 @@ static const struct _boardcnf boardcnfs[BOARDNUM] = {
 	0x00a0,		/* dqdm_dly_r */
 	{
 /*ch[0]*/	{
-/*ddr_density[]*/	{ 0x02, 0x02 },
+/*ddr_density[]*/	{ 0x04, 0xFF },
 /*ca_swap*/		0x00345201,
 /*dqs_swap*/		0x3201,
 /*dq_swap[]*/		{ 0x01672543, 0x45361207, 0x45632107, 0x60715234 },
